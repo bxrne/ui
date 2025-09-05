@@ -3,8 +3,12 @@ const plugin = require('tailwindcss/plugin');
 module.exports = plugin(
   ({ addBase, addComponents, addUtilities, addVariant, theme }) => {
     addBase({
-      ':root': { colorScheme: 'dark' },
-      '[data-theme="light"]': { colorScheme: 'light' }
+      ':root': { colorScheme: 'light' },
+      '@media (prefers-color-scheme: dark)': {
+        ':root:not([data-theme])': { colorScheme: 'dark' }
+      },
+      '[data-theme="light"]': { colorScheme: 'light' },
+      '[data-theme="dark"]': { colorScheme: 'dark' }
     });
 
     addVariant('hocus', ['&:hover', '&:focus-visible']);

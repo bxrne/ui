@@ -1,10 +1,11 @@
 /* @bxrne/ui tokens and base styles */
 :root {
-  --bg: #0e1012;
-  --bg-elev: #14171a;
-  --fg: #e6e9ee;
-  --muted: #aeb5bd;
-  --border: #2b3138;
+  /* Default: light theme */
+  --bg: #ffffff;
+  --bg-elev: #ffffff;
+  --fg: #0b0d10;
+  --muted: #4a4f56;
+  --border: #d0d7df;
 
   --accent: #e23a3a;      /* red */
   --accent-2: #ffcc00;    /* industrial yellow */
@@ -15,18 +16,40 @@
   --radius-md: 6px;
 
   --ring: var(--accent-3);
-  --shadow-1: 0 1px 0 rgba(0,0,0,.45), 0 6px 24px rgba(0,0,0,.25);
+  --shadow-1: 0 1px 0 rgba(0,0,0,.05), 0 10px 36px rgba(0,0,0,.08);
 
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
+/* Explicit overrides */
 [data-theme="light"] {
-  --bg: #fafafa;
+  --bg: #ffffff;
   --bg-elev: #ffffff;
-  --fg: #131518;
-  --muted: #464b52;
-  --border: #cfd6de;
+  --fg: #0b0d10;
+  --muted: #4a4f56;
+  --border: #d0d7df;
   --shadow-1: 0 1px 0 rgba(0,0,0,.05), 0 10px 36px rgba(0,0,0,.08);
+}
+
+[data-theme="dark"] {
+  --bg: #0e1012;
+  --bg-elev: #14171a;
+  --fg: #e6e9ee;
+  --muted: #aeb5bd;
+  --border: #2b3138;
+  --shadow-1: 0 1px 0 rgba(0,0,0,.45), 0 6px 24px rgba(0,0,0,.25);
+}
+
+/* Auto-adjust to system when data-theme is not set */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --bg: #0e1012;
+    --bg-elev: #14171a;
+    --fg: #e6e9ee;
+    --muted: #aeb5bd;
+    --border: #2b3138;
+    --shadow-1: 0 1px 0 rgba(0,0,0,.45), 0 6px 24px rgba(0,0,0,.25);
+  }
 }
 
 *, *::before, *::after { box-sizing: border-box; }

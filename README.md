@@ -1,6 +1,12 @@
 # @bxrne/ui
 
-Utilitarian UI for Astro + Tailwind. Mono-first typography, visible borders, minimal components.
+A UI for strong interfaces following a utilitarian format inspired by the US Graphics Company's aesthetic. Built for Astro + Tailwind. Mono-first typography, visible borders, minimal components. Defaults to light theme, auto-adjusts to system, and supports explicit `[data-theme]` overrides.
+
+## Install
+
+```bash
+pnpm add @bxrne/ui
+```
 
 ## Usage
 
@@ -8,11 +14,14 @@ Utilitarian UI for Astro + Tailwind. Mono-first typography, visible borders, min
 - Add Astro integration to inject global styles
 
 ```js
-// tailwind.config.cjs
-module.exports = {
+// tailwind.config.mjs
+import preset from '@bxrne/ui/preset';
+import uiPlugin from '@bxrne/ui';
+
+export default {
   content: ['./src/**/*.{astro,ts,tsx,js,jsx,mdx}'],
-  presets: [require('@bxrne/ui/preset')],
-  plugins: [require('@bxrne/ui')]
+  presets: [preset],
+  plugins: [uiPlugin]
 };
 ```
 
@@ -25,3 +34,8 @@ export default defineConfig({
   integrations: [bxrneUI()]
 });
 ```
+
+## Theming
+- Default light. Opt into dark: `<html data-theme="dark">`
+- Follow system when `data-theme` is unset.
+
