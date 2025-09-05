@@ -1,0 +1,42 @@
+/* @bxrne/ui tokens and base styles */
+:root {
+  --bg: #0e1012;
+  --bg-elev: #14171a;
+  --fg: #e6e9ee;
+  --muted: #aeb5bd;
+  --border: #2b3138;
+
+  --accent: #e23a3a;      /* red */
+  --accent-2: #ffcc00;    /* industrial yellow */
+  --accent-3: #1e66f5;    /* signal blue */
+
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+
+  --ring: var(--accent-3);
+  --shadow-1: 0 1px 0 rgba(0,0,0,.45), 0 6px 24px rgba(0,0,0,.25);
+
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+[data-theme="light"] {
+  --bg: #fafafa;
+  --bg-elev: #ffffff;
+  --fg: #131518;
+  --muted: #464b52;
+  --border: #cfd6de;
+  --shadow-1: 0 1px 0 rgba(0,0,0,.05), 0 10px 36px rgba(0,0,0,.08);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-mono);
+  text-rendering: optimizeLegibility;
+}
+
+/* High-visibility borders utility baseline */
+:where(.bordering) { border: 1px solid var(--border); }

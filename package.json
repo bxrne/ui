@@ -1,0 +1,25 @@
+{
+  "name": "@bxrne/ui",
+  "version": "0.1.0",
+  "description": "Utilitarian UI: Tailwind preset + plugin + Astro integration with mono typography and strong borders.",
+  "license": "MIT",
+  "type": "commonjs",
+  "main": "plugin.cjs",
+  "exports": {
+    ".": "./plugin.cjs",
+    "./preset": "./preset.cjs",
+    "./styles.css": "./styles.css",
+    "./astro": "./astro.mjs"
+  },
+  "files": [
+    "plugin.cjs",
+    "preset.cjs",
+    "styles.css",
+    "astro.cjs",
+    "README.md"
+  ],
+  "peerDependencies": {
+    "tailwindcss": "^3.4.0",
+    "astro": "^4.0.0"
+  }
+}
