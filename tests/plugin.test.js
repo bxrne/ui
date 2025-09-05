@@ -19,7 +19,7 @@ async function generateCSS(classes) {
 describe('@bxrne/ui plugin', () => {
   it('emits card styles', async () => {
     const css = await generateCSS('card');
-    expect(css).toContain('border: 1px solid var(--border)');
+    expect(css).toContain('border: 2px solid var(--border-strong)');
   });
   it('includes btn styles', async () => {
     const css = await generateCSS('btn btn-primary');

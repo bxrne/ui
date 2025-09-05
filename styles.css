@@ -5,11 +5,16 @@
   --bg-elev: #ffffff;
   --fg: #0b0d10;
   --muted: #4a4f56;
-  --border: #d0d7df;
+  --border: #111111;           /* subtle lines */
+  --border-strong: #000000; /* prominent outlines */
 
-  --accent: #e23a3a;      /* red */
-  --accent-2: #ffcc00;    /* industrial yellow */
-  --accent-3: #1e66f5;    /* signal blue */
+  --accent: #2a7f3a;       /* signal green */
+  --accent-2: #1e5d2a;     /* dark green */
+  --accent-3: #0f3d1c;     /* deeper green */
+
+  --offset-x: 6px;
+  --offset-y: 6px;
+  --offset-color: #000000;
 
   --radius-xs: 2px;
   --radius-sm: 4px;
